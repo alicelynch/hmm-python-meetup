@@ -1,0 +1,26 @@
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 600px; height: 320px;"></div>
+       <script>
+       google.charts.load('current', {'packages':['sankey']});
+       google.charts.setOnLoadCallback(drawChart);
+
+       function drawChart() {
+       var data = new google.visualization.DataTable();
+       data.addColumn('string', 'From');
+       data.addColumn('string', 'To');
+       data.addColumn('number', 'Weight');
+       data.addRows([['happy', 'netflix', 0.093291866347673585], ['happy', 'facebook', 0.11435226867782303], ['happy', 'dishes', 0.046008554197583991], ['happy', 'whiskey', 0.12762681563242018], ['happy', 'guitar', 0.61872049514449934], ['angry', 'netflix', 0.058603163400759724], ['angry', 'facebook', 0.1217912573393729], ['angry', 'dishes', 0.31540754143216515], ['angry', 'whiskey', 0.41831465998699674], ['angry', 'guitar', 0.085883377840705308], ['sad', 'netflix', 0.6176800524485746], ['sad', 'facebook', 0.087263038053587982], ['sad', 'dishes', 0.095255415390137307], ['sad', 'whiskey', 0.10711262215426728], ['sad', 'guitar', 0.092688871953432825]]);
+
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+      </script>
+</html>
+    

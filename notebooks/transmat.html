@@ -1,0 +1,26 @@
+<html>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="sankey_basic" style="width: 600px; height: 320px;"></div>
+       <script>
+       google.charts.load('current', {'packages':['sankey']});
+       google.charts.setOnLoadCallback(drawChart);
+
+       function drawChart() {
+       var data = new google.visualization.DataTable();
+       data.addColumn('string', 'From');
+       data.addColumn('string', 'To');
+       data.addColumn('number', 'Weight');
+       data.addRows([['From: happy', 'To: happy', 0.76868421728885239], ['From: happy', 'To: angry', 0.060994145693397971], ['From: happy', 'To: sad', 0.17032163701774958], ['From: angry', 'To: happy', 0.064150038802330916], ['From: angry', 'To: angry', 0.74615801871666732], ['From: angry', 'To: sad', 0.18969194248100185], ['From: sad', 'To: happy', 0.12660387456565891], ['From: sad', 'To: angry', 0.098569305983252198], ['From: sad', 'To: sad', 0.77482681945108889]]);
+
+        // Sets chart options.
+        var options = {
+          width: 600,
+        };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+      </script>
+</html>
+    
